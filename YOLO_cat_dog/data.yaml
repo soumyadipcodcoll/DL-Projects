@@ -1,0 +1,9 @@
+path: D:/Git_project/Projects/DL/YOLO_cat_dog/data
+
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: dog
+  1: cat
