@@ -18,7 +18,7 @@ model = YOLO(MODEL_PATH)
 
 HERO_IMAGE_PATH = os.path.join(
     PROJECT_DIR,
-    "Data",
+    "App",
     "ChatGPT Image Sep 16, 2026, 04_34_48 PM.png",
 )
 
