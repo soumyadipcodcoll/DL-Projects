@@ -29,6 +29,12 @@ data/
 dataset/
 datasets/
 
+# Training outputs
+runs/
+Runs/
+outputs/
+checkpoints/
+
 # Logs
 *.log
 
@@ -39,3 +45,9 @@ datasets/
 # OS
 .DS_Store
 Thumbs.db
+
+# Config files
+*.yaml
+
+# extra folders
+CDD/
