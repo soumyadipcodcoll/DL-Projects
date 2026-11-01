@@ -1,8 +1,8 @@
 import torch
 import ultralytics.nn.tasks as tasks
-def _fixed_safe_load(weight, **kwargs):
-    return torch.load(weight, map_location="cpu", weights_only=False)
-tasks.torch_safe_load = _fixed_safe_load
+# def _fixed_safe_load(weight, **kwargs):
+#     return torch.load(weight, map_location="cpu", weights_only=False)
+# tasks.torch_safe_load = _fixed_safe_load
 import streamlit as st
 from ultralytics import YOLO
 from PIL import Image
