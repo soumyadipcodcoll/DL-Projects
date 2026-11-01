@@ -1,16 +1,14 @@
 import torch
-# allow YOLO .pt files
-_orig_load = torch.load
-def _patched_load(*args, **kwargs):
-    kwargs['weights_only'] = False
-    return _orig_load(*args, **kwargs)
-torch.load = _patched_load
-
+import ultralytics.nn.tasks as tasks
+def _fixed_safe_load(weight, **kwargs):
+    return torch.load(weight, map_location="cpu", weights_only=False)
+tasks.torch_safe_load = _fixed_safe_load
 import streamlit as st
 from ultralytics import YOLO
 from PIL import Image
 import base64
 import os
+st.set_page_config(page_title="Cat vs Dog Detector", layout="centered")
 
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
