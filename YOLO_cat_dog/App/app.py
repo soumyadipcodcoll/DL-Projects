@@ -1,8 +1,17 @@
+import torch
+# allow YOLO .pt files
+_orig_load = torch.load
+def _patched_load(*args, **kwargs):
+    kwargs['weights_only'] = False
+    return _orig_load(*args, **kwargs)
+torch.load = _patched_load
+
 import streamlit as st
 from ultralytics import YOLO
 from PIL import Image
 import base64
 import os
+
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
